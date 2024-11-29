@@ -1,6 +1,19 @@
 version: '3.8'
 
 services:
+  db:
+#    image: postgres:15-alpine
+#    build: DB/.
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydatabase
+    volumes:
+      - ./DB/database_files:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
   web:
     build: .
 #    image: my_django_image:3
@@ -9,6 +22,8 @@ services:
       - .:/app
     ports:
       - "8000:8000"
+    depends_on:
+      - db
 #    environment:
 #      DATABASE_URL: postgres://myuser:mypassword@db:5432/mydatabase
 #       DATABASE_URL: postgres://root:skNglFqKFNDRSM2iN1EioZV5@arthur:iran:liara:ir:32051/mydatabase

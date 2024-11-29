@@ -2,7 +2,7 @@
   <configuration default="false" name="run django app" type="docker-deploy" factoryName="docker-image" server-name="Docker">
     <deployment type="docker-image">
       <settings>
-        <option name="imageTag" value="my_django_image:3" />
+        <option name="imageTag" value="django:1" />
         <option name="containerName" value="my_django" />
         <option name="portBindings">
           <list>

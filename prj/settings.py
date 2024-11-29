@@ -66,22 +66,22 @@ WSGI_APPLICATION = 'prj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydatabase',
-        'USER': 'root',
-        'PASSWORD': 'skNglFqKFNDRSM2iN1EioZV5',
-        'HOST': 'arthur.iran.liara.ir',
-        'PORT': '32051',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'mydatabase',
+#         'USER': 'root',
+#         'PASSWORD': 'skNglFqKFNDRSM2iN1EioZV5',
+#         'HOST': 'arthur.iran.liara.ir',
+#         'PORT': '32051',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -132,3 +132,7 @@ CORS_ALLOWED_ORIGINS = [
     # "https://example.com",
     'https://*.app.github.dev',
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+'https://*.app.github.dev',
+ ]

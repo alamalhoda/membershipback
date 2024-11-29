@@ -5,7 +5,7 @@ FROM python:3.12-alpine
 ENV PYTHONUNBUFFERED 1
 
 # Install dependencies
-RUN apk update && apk add --no-cache postgresql-dev gcc python3-dev musl-dev
+#RUN apk update && apk add --no-cache postgresql-dev gcc python3-dev musl-dev
 # Set the working directory in the container
 WORKDIR /app
 
